@@ -5,7 +5,7 @@ import logging
 
 import ckan.lib.dictization.model_dictize as model_dictize
 import ckan.lib.search as search
-from ckan.lib.base import model
+from ckan import model
 from ckan.common import config
 from ckan.model import Package, Session
 from ckan.plugins.core import SingletonPlugin
@@ -16,7 +16,7 @@ from ckanext.multilang.model import (
     TagMultilang,
 )
 from ckanext.spatial.harvesters.csw import CSWHarvester
-from ckanext.spatial.model import (
+from ckanext.spatial.harvested_metadata import (
     ISODocument,
     ISOElement,
     ISOKeyword,
