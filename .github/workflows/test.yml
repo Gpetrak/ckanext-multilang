@@ -69,7 +69,7 @@ jobs:
       run: |
         crudini --set --verbose --list --list-sep=\  test.ini app:main ckan.plugins harvest ckan_harvester
         ckan -c test.ini db init
-        ckan -c test.ini harvester initdb
+        ckan -c test.ini db upgrade -p harvest
     - name: Run tests
       run: pytest --ckan-ini=test.ini --cov=ckanext.multilang --cov-report=xml --cov-append --disable-warnings ckanext/multilang/tests
 
